@@ -1,38 +1,243 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Full-Screen Centering */
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Container */
+.container {
+    text-align: center;
+    color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Intro Section */
+.intro {
+    animation: fadeIn 2s ease-in-out;
+    margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.description {
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* Option Buttons */
+.option-button {
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.option-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Back Button */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #ff5e57;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #e04848;
+}
+
+/* Calculator */
+.app {
+    width: 320px;
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Calculator Input Field */
+input[type="text"] {
+    width: 100%;
+    height: 60px; /* Same height as other inputs */
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(70, 130, 180, 0.5);
+    color: white;
+    font-size: 24px;
+    text-align: right;
+    outline: none;
+    transition: background 0.3s;
+}
+
+input[type="text"]:focus {
+    background-color: rgba(70, 130, 180, 0.7);
+}
+
+/* Keypad Layout */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+/* Calculator Buttons */
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 22px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* Special Buttons (Clear, Backspace, Result) */
+#clear, #result {
+    grid-column: span 2;
+    background-color: #FF6B6B;
+    color: white;
+}
+
+#clear:hover, #result:hover {
+    background-color: #FF3B3B;
+}
+
+/* Operator Buttons */
+.highlight {
+    background-color: #56cbdb;
+}
+
+.highlight:hover {
+    background-color: #4a9ca8;
+}
+
+/* Currency Converter */
+.currency-converter {
+    width: 320px;
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(31, 58, 147, 0.3);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Input Fields and Dropdowns for Currency Converter */
+.converter-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Value Input (Larger Size) */
+.input-field {
+    width: 65%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(70, 130, 180, 0.5);
+    color: white;
+    font-size: 20px;
+    outline: none;
+    text-align: right;
+    transition: background 0.3s;
+}
+
+/* Dropdown Input (Smaller Size) */
+.currency-select {
+    width: 30%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(70, 130, 180, 0.5);
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+    appearance: none;
+    transition: background 0.3s;
+}
+
+.input-field:focus, .currency-select:focus {
+    background-color: rgba(70, 130, 180, 0.7);
+}
+
+/* Convert Button */
+.convert-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #5DADE2;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.convert-button:hover {
+    background-color: #3498DB;
+    transform: scale(1.05);
+}
+
+/* Conversion Result */
+.conversion-result {
+    margin-top: 15px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
