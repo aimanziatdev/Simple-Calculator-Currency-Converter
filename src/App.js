@@ -3,8 +3,8 @@ import './App.css';
 
 function App() {
     const [selectedOption, setSelectedOption] = useState(null); 
-    const [result, setResult] = useState(""); // Calculator result
-    const [amount, setAmount] = useState(""); // Currency converter input
+    const [result, setResult] = useState(""); 
+    const [amount, setAmount] = useState(""); 
     const [sourceCurrency, setSourceCurrency] = useState("EUR");
     const [targetCurrency, setTargetCurrency] = useState("USD");
     const [convertedAmount, setConvertedAmount] = useState("");
@@ -16,7 +16,6 @@ function App() {
         ZAR: 18.60, KRW: 1390.50, HKD: 8.30, SGD: 1.40, NZD: 1.78
     };
 
-    // Calculator Functions
     const handleCalculatorClick = (e) => setResult(result.concat(e.target.name));
     const clearCalculator = () => setResult("");
     const backspaceCalculator = () => setResult(result.slice(0, -1));
@@ -28,7 +27,6 @@ function App() {
         }
     };
 
-    // Currency Converter Function
     const convertCurrency = () => {
         const rate = exchangeRates[targetCurrency] / exchangeRates[sourceCurrency];
         setConvertedAmount((parseFloat(amount) * rate).toFixed(2));
@@ -53,7 +51,6 @@ function App() {
             ) : (
                 <>
                     <button className="back-button" onClick={() => setSelectedOption(null)}>Back</button>
-
                     {selectedOption === "calculator" ? (
                         <div className="app">
                             <form>

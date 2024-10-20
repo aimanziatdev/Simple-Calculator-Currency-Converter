@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap');
 
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +7,6 @@
     font-family: 'Roboto Mono', monospace;
 }
 
-/* Full-Screen Centering */
 body, html {
     height: 100%;
     display: flex;
@@ -17,13 +15,11 @@ body, html {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 
-/* Container */
 .container {
     text-align: center;
     color: white;
 }
 
-/* Intro Section */
 .intro {
     animation: fadeIn 2s ease-in-out;
     margin-bottom: 20px;
@@ -43,7 +39,6 @@ body, html {
     line-height: 1.5;
 }
 
-/* Option Buttons */
 .option-button {
     padding: 15px 30px;
     margin: 10px;
@@ -62,7 +57,6 @@ body, html {
     transform: scale(1.05);
 }
 
-/* Back Button */
 .back-button {
     position: absolute;
     top: 20px;
@@ -80,7 +74,6 @@ body, html {
     background-color: #e04848;
 }
 
-/* Calculator */
 .app {
     width: 320px;
     margin-top: 20px;
@@ -92,10 +85,9 @@ body, html {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* Calculator Input Field */
 input[type="text"] {
     width: 100%;
-    height: 60px; /* Same height as other inputs */
+    height: 60px;
     padding: 15px;
     margin-bottom: 15px;
     border: none;
@@ -112,14 +104,12 @@ input[type="text"]:focus {
     background-color: rgba(70, 130, 180, 0.7);
 }
 
-/* Keypad Layout */
 .keypad {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
 }
 
-/* Calculator Buttons */
 button {
     padding: 15px;
     border: none;
@@ -136,7 +126,6 @@ button:hover {
     transform: scale(1.1);
 }
 
-/* Special Buttons (Clear, Backspace, Result) */
 #clear, #result {
     grid-column: span 2;
     background-color: #FF6B6B;
@@ -147,7 +136,6 @@ button:hover {
     background-color: #FF3B3B;
 }
 
-/* Operator Buttons */
 .highlight {
     background-color: #56cbdb;
 }
@@ -156,7 +144,6 @@ button:hover {
     background-color: #4a9ca8;
 }
 
-/* Currency Converter */
 .currency-converter {
     width: 320px;
     margin-top: 20px;
@@ -168,7 +155,6 @@ button:hover {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* Input Fields and Dropdowns for Currency Converter */
 .converter-inputs {
     display: flex;
     justify-content: space-between;
@@ -176,7 +162,6 @@ button:hover {
     margin-bottom: 15px;
 }
 
-/* Value Input (Larger Size) */
 .input-field {
     width: 65%;
     padding: 15px;
@@ -190,7 +175,6 @@ button:hover {
     transition: background 0.3s;
 }
 
-/* Dropdown Input (Smaller Size) */
 .currency-select {
     width: 30%;
     padding: 15px;
@@ -209,7 +193,6 @@ button:hover {
     background-color: rgba(70, 130, 180, 0.7);
 }
 
-/* Convert Button */
 .convert-button {
     width: 100%;
     padding: 15px;
@@ -228,7 +211,6 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Conversion Result */
 .conversion-result {
     margin-top: 15px;
     font-size: 18px;
@@ -236,7 +218,6 @@ button:hover {
     text-align: center;
 }
 
-/* Fade-In Animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
